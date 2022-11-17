@@ -22,9 +22,9 @@ class Node:
 
 def search_node(root, data):
     if root is None:
-        message = "The node"+" "+str(data)+" "+"you searched doesn't exits"
+        message = "The node"+" "+str(data)+" "+"you searched for doesn't exists"
     elif root.data == data:
-        message = "The node"+" "+str(data)+" "+"you searched currently exits"
+        message = "The node"+" "+str(data)+" "+"you searched for currently exists"
     elif data < root.data:
         message = search_node(root.left, data)
     elif data > root.data:
@@ -48,16 +48,16 @@ def search_common_node(root, x, y):
 
 def common_node(root, x, y):
     if not root or not search_node(root, x) or not search_node(root, y):
-        response = {"message": "the common node does not exist..."}
+        response = {"message": "The common ancestor does not exist..."}
         return response
 
     common_search = search_common_node(root, x, y)
 
     if common_search:
-        response = {"The common node is:": common_search}
+        response = {"The common ancestor is": common_search}
         return response
     else:
-        response = {"message": "the common node does not exist..."}
+        response = {"message": "The common ancestor does not exist..."}
         return response
 
 
