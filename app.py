@@ -15,5 +15,11 @@ def get_common_ancestor():
     return jsonify(common_node(root, 76, 85))
 
 
+@app.route('/getNode/<int:data>')
+def search_individual_node(data):
+    root = create_tree(70, 49, 37, 54, 84, 78, 85, 22, 40, 51, 76, 80)
+    return jsonify({"message": search_node(root, data)})
+
+
 if __name__ == '__main__':
     app.run()
