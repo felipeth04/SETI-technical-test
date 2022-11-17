@@ -22,9 +22,9 @@ class Node:
 
 def search_node(root, data):
     if root is None:
-        message = "The node"+" "+str(data)+" "+"you searched for doesn't exists"
+        message = False
     elif root.data == data:
-        message = "The node"+" "+str(data)+" "+"you searched for currently exists"
+        message = True
     elif data < root.data:
         message = search_node(root.left, data)
     elif data > root.data:
