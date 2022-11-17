@@ -59,3 +59,10 @@ def common_node(root, x, y):
     else:
         response = {"message": "the common node does not exist..."}
         return response
+
+
+def create_tree(initial_node, *args):
+    root = Node(initial_node)
+    for i in range(len(args)):
+        root.add_node(root, Node(args[i]))
+    return root
